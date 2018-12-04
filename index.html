@@ -1,0 +1,66 @@
+<html>
+<style> 
+	body{
+	background: rgba(0,0,0,1);
+	margin:0;
+	}
+</style>
+<body>
+<canvas width="800" height="600"></canvas>
+ <!--Echo out to stalkers!-->
+<script>
+  
+
+/*
+  ________        __            _____  _____                  .__                       
+ /  _____/  _____/  |_    _____/ ____\/ ____\   _____ ___.__. |  | _____ __  _  ______  
+/   \  ____/ __ \   __\  /  _ \   __\\   __\   /     <   |  | |  | \__  \\ \/ \/ /    \ 
+\    \_\  \  ___/|  |   (  <_> )  |   |  |    |  Y Y  \___  | |  |__/ __ \\     /   |  \
+ \______  /\___  >__|    \____/|__|   |__|    |__|_|  / ____| |____(____  /\/\_/|___|  /
+        \/     \/                                   \/\/                \/           \/ 
+*/
+
+            // _
+</script>
+<script>
+  var wickedbody = document.body;
+  var c = document.getElementsByTagName('canvas')[0];
+  var $ = c.getContext('2d');
+  document.body.clientWidth; 
+  
+  S =wickedbody.querySelectorAll("script")[0].innerHTML.split("\n");
+  so = 0; fs = "fillStyle";
+  lo = 1;ln = "length";
+  c.width = W = innerWidth;
+  c.height = H = S.length*20;
+ wickedbody.style.margin = 0;
+ wickedbody.style.background = "#000";
+ wickedbody.style.overflow = "hidden";
+  $.textBaseline = "top";
+  $.font = "14px monospace";
+
+
+ x = setInterval(function() {
+	$.globalCompositeOperation = "source-over";
+	$.shadowBlur = 0; $[fs] = "rgba(0,0,0,0.4)";
+	$.fillRect(0,0,W,H);
+	$.shadowColor = "rgba(0,255,0,0.5)";
+	$.shadowBlur = 8; $[fs] = "#060";
+	$.globalCompositeOperation = "lighter";
+	S.forEach(function(v, i) {
+		if (i <= lo) {
+			if (i == lo) { v = v.substr(0, so); }
+			$.fillText(v, 100, 100+i*16);
+		}
+	});
+	$[fs] = "#0f0";
+	$.fillRect(100+$.measureText(S[lo].substr(0, so)).width, 102+lo*16, 10, 14);
+	so++;
+		if (so >= S[lo][ln]) { lo++; so = 0; }
+			if (lo*16 > innerHeight-200) { $.translate(0, -0.5); }
+				if (lo >= S[ln]-1) { window.clearInterval(x); }
+  }, .25);  // fuck yeah! .25
+
+</script>
+</body>
+</html>
